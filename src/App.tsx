@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
+
+import Todo from '@src/views/Todo';
 
 function App(): JSX.Element {
   return (
     <PaperProvider>
-      <Text>ola</Text>
+      <Todo />
     </PaperProvider>
   );
 }
