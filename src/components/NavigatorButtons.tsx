@@ -16,14 +16,14 @@ const NavigatorButtons: React.FC<NavigatorButtonsProps> = ({
       <IconButton
         size={42}
         icon="chevron-left"
-        mode="outlined"
+        mode="contained"
         onPress={() => changeDate(-1)}
       />
 
       <IconButton
         size={42}
         icon="chevron-right"
-        mode="outlined"
+        mode="contained"
         disabled={isToday}
         onPress={() => changeDate(1)}
       />
