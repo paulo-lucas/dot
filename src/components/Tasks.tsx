@@ -4,10 +4,12 @@ import {Text} from 'react-native-paper';
 
 interface TasksProps {
   date: Date;
+  showChecked: boolean;
 }
 
-const Tasks: React.FC<TasksProps> = ({}) => {
-  const list = useQueryTasks();
+const Tasks: React.FC<TasksProps> = ({date, showChecked}) => {
+  const list = useQueryTasks(date, showChecked);
+
   return (
     <>
       {list.map(task => (

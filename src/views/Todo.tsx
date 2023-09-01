@@ -19,7 +19,7 @@ const Todo: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <ScrollView style={styles.tasks}>
-        <Tasks date={date} />
+        <Tasks date={date} showChecked />
       </ScrollView>
       <Navigator date={date} setDate={setDate} />
       <NewTaskModal visible={modalVisible} onDismiss={onDismissModal} />

@@ -8,6 +8,7 @@ export default () => {
       realm.create('Task', {
         content,
         date,
+        checked: false,
         _id: new Realm.BSON.ObjectId(),
       });
     });

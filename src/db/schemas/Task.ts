@@ -10,6 +10,7 @@ class Task extends Realm.Object<Task> {
       _id: 'objectId',
       content: 'string',
       date: 'date',
+      checked: 'bool',
     },
     primaryKey: '_id',
   };
