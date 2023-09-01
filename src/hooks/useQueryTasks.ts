@@ -1,4 +1,4 @@
 import {useQuery} from '@src/db/realm';
-import Task from '@src/db/schemas/Task';
+import TaskSchema from '@src/db/schemas/Task';
 
-export default () => useQuery(Task);
+export default () => useQuery(TaskSchema);

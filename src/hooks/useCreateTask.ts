@@ -3,11 +3,11 @@ import {useRealm} from '@src/db/realm';
 
 export default () => {
   const realm = useRealm();
-  return () => {
+  return (content: string, date: Date) => {
     realm.write(() => {
       realm.create('Task', {
-        content: 'TESTE',
-        date: new Date(),
+        content,
+        date,
         _id: new Realm.BSON.ObjectId(),
       });
     });

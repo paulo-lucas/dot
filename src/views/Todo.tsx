@@ -1,26 +1,36 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import {ScrollView, StyleSheet, SafeAreaView} from 'react-native';
 
+import StatusBar from '@src/components/StatusBar';
 import Navigator from '@src/components/Navigator';
-import useQueryTasks from '@src/hooks/useQueryTasks';
+import Tasks from '@src/components/Tasks';
+import NewTaskModal from '@src/components/NewTaskModal';
+import {MD3Theme, useTheme} from 'react-native-paper';
 
 const Todo: React.FC = () => {
+  const theme = useTheme();
+  const styles = getStyles(theme);
+
   const [date, setDate] = useState<Date>(new Date());
-  const tasks = useQueryTasks();
+  const [modalVisible, setModalVisible] = useState<boolean>(true);
+  const onDismissModal = () => setModalVisible(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.tasks}>
-        <Text>{tasks.toString()}</Text>
-      </View>
+      <StatusBar />
+      <ScrollView style={styles.tasks}>
+        <Tasks date={date} />
+      </ScrollView>
       <Navigator date={date} setDate={setDate} />
+      <NewTaskModal visible={modalVisible} onDismiss={onDismissModal} />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {flex: 1},
-  tasks: {flexGrow: 1},
-});
+const getStyles = (theme: MD3Theme) =>
+  StyleSheet.create({
+    container: {flex: 1, backgroundColor: theme.colors.background},
+    tasks: {flexGrow: 1},
+  });
 
 export default Todo;
