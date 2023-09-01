@@ -61,7 +61,7 @@ const darkColors = {
   onError: 'rgb(105, 0, 5)',
   errorContainer: 'rgb(147, 0, 10)',
   onErrorContainer: 'rgb(255, 180, 171)',
-  background: 'rgb(25, 28, 30)',
+  background: 'rgb(15, 17, 18)',
   onBackground: 'rgb(225, 226, 229)',
   surface: 'rgb(25, 28, 30)',
   onSurface: 'rgb(225, 226, 229)',
